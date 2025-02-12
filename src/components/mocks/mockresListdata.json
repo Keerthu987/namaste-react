@@ -1,0 +1,20 @@
+{
+    "id": "37972",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/9/18/1509e434-b7a1-4b83-91ce-7be7bb8f58d3_37972.jpg",
+    "name": "McDonald's",
+    "cuisines": [
+        "Burgers",
+        "Beverages",
+        "Cafe",
+        "Desserts"
+    ],
+    "avgRating": 4.3,
+    "sla": {
+        "deliveryTime": 30,
+        "lastMileTravel": 3.8,
+        "serviceability": "SERVICEABLE",
+        "slaString": "25-30 mins",
+        "lastMileTravelString": "3.8 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "id": "889711",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/14/a32e37c7-b307-4b69-91fb-d28ffbd992f9_889711.jpg",
+    "name": "Geetham Veg Restaurant",
+    "cuisines": [
+        "Chinese",
+        "South Indian",
+        "Chaat",
+        "Beverages",
+        "Ice Cream",
+        "Juices"
+    ],
+    "avgRating": 4.6,
+    "sla": {
+        "deliveryTime": 35,
+        "lastMileTravel": 3.9,
+        "serviceability": "SERVICEABLE",
+        "slaString": "30-35 mins",
+        "lastMileTravelString": "3.9 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    }
+}
