@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
-// import UserContext from "../utils/UserContext";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     let [searchText, setSearchText] = useState("");
@@ -16,7 +16,7 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0843007&lng=80.2704622&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.4603582&lng=77.7709558&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log(data)
         const restaurants = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
@@ -33,7 +33,7 @@ const Body = () => {
     if (!listOfRestaurants || listOfRestaurants.length === 0) {
         return <Shimmer />;
     }
-    // const {loggedInUser,setUserInfo} =useContext(UserContext);
+    const {loggedInUser,setUserInfo} =useContext(UserContext);
 
     return (
         <div className="body bg-gray-50 p-6">
@@ -70,9 +70,9 @@ const Body = () => {
                 >
                     Top Rated
                 </button>
-                <label className="font-bold mx-2">User name</label>
+                <label className="font-bold mx-2">Context API Provider</label>
                 <input className="border border-black p-2" 
-                // value={loggedInUser} onChange={(e)=> setUserInfo(e.target.value)}
+                value={loggedInUser} onChange={(e)=> setUserInfo(e.target.value)}
                 />
             </div>
 

@@ -1,6 +1,6 @@
 import logo from '../../logo.png';
 import { useState,useContext } from 'react';
-import { Link } from 'react-router';
+import { NavLink, Link } from 'react-router';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
 import { useSelector } from 'react-redux';
@@ -15,58 +15,72 @@ const Header = () => {
         <div className="flex justify-between items-center p-6 bg-white shadow-md rounded-lg">
             {/* Logo Section */}
             <div className="logo-container">
+                <Link
+                            to="/">
                 <img className="w-16 h-16 rounded-full" src={logo} alt="Logo" />
+                </Link>
             </div>
 
             {/* Nav and Status Section */}
             <div className="flex items-center space-x-8">
-                <ul className="flex gap-6 m-0 p-0 list-none text-lg font-medium">
-                    <li>
-                        <span className="text-sm text-gray-600 opacity-80">
-                            Online Status: {onlinestat ? "✅" : "❌"}
-                        </span>
-                    </li>
-                    <li>
-                        <Link
-                            to="/"
-                            className="hover:text-gray-500 transition-colors duration-300"
-                        >
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/about"
-                            className="hover:text-gray-500 transition-colors duration-300"
-                        >
-                            About
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/contact"
-                            className="hover:text-gray-500 transition-colors duration-300"
-                        >
-                            Contact Us
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/grocery"
-                            className="hover:text-gray-500 transition-colors duration-300"
-                        >
-                            Grocery
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/cart"
-                            className="cursor-pointer hover:text-gray-500 transition-colors duration-300">
-                            Cart -  {cart.length}
-                        </Link>
-                    </li>
-                   
-                </ul>
+            <ul className="flex gap-6 m-0 p-0 list-none text-lg font-medium">
+  <li>
+    <span className="text-sm text-gray-600 opacity-80">
+      Online Status: {onlinestat ? "✅" : "❌"}
+    </span>
+  </li>
+  <li>
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        isActive ? "text-green-600 font-bold border-b-2 border-green-600" : "hover:text-gray-500"
+      }
+    >
+      Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/about"
+      className={({ isActive }) =>
+        isActive ? "text-green-600 font-bold border-b-2 border-green-600" : "hover:text-gray-500"
+      }
+    >
+      About
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/contact"
+      className={({ isActive }) =>
+        isActive ? "text-green-600 font-bold border-b-2 border-green-600" : "hover:text-gray-500"
+      }
+    >
+      Contact Us
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/grocery"
+      className={({ isActive }) =>
+        isActive ? "text-green-600 font-bold border-b-2 border-green-600" : "hover:text-gray-500"
+      }
+    >
+      Grocery
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/cart"
+      className={({ isActive }) =>
+        isActive ? "text-green-600 font-bold border-b-2 border-green-600" : "hover:text-gray-500"
+      }
+    >
+      Cart - {cart.length}
+    </NavLink>
+  </li>
+</ul>
+
 
                 {/* Login/Logout Button */}
                 <button
